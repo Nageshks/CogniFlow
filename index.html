@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CogniFlow</title>
+    <meta name="description" content="Personal cognitive memory system for managing reusable prompts, workflows, and cognitive assets" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.backgroundColor = '#000000';
+        } else {
+          document.documentElement.classList.add('light');
+          document.documentElement.style.backgroundColor = '#ffffff';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <style>
+        .startup-loader-container {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: #000000;
+          color: #ffffff;
+          font-family: "Sora", system-ui, -apple-system, sans-serif;
+          z-index: 99999;
+          transition: opacity 0.4s ease;
+          user-select: none;
+        }
+        .light .startup-loader-container {
+          background-color: #ffffff;
+          color: #121214;
+        }
+        .logo-squircle-startup {
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          background: #ffffff;
+          border: 1px solid #e5e5e5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .dark .logo-squircle-startup {
+          background: #09090b;
+          border: 1px solid #27272a;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .logo-ring-startup {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 2px solid hsl(180, 100%, 50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+        .logo-dot-startup {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: hsl(180, 100%, 50%);
+          box-shadow: 0 0 8px hsl(180, 100%, 50%);
+        }
+        .app-name-startup {
+          font-family: "Outfit", system-ui, -apple-system, sans-serif;
+          font-size: 20px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
+          margin-bottom: 8px;
+        }
+        .app-subtitle-startup {
+          font-size: 9px;
+          font-weight: 700;
+          color: #88888b;
+          margin-bottom: 32px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+        .light .app-subtitle-startup {
+          color: #66666a;
+        }
+        .loader-bar-container-startup {
+          width: 140px;
+          height: 3px;
+          background: #18181b;
+          border-radius: 99px;
+          overflow: hidden;
+          position: relative;
+        }
+        .light .loader-bar-container-startup {
+          background: #f1f1f1;
+        }
+        .loader-bar-progress-startup {
+          height: 100%;
+          width: 50%;
+          background: linear-gradient(90deg, hsl(180, 100%, 50%), hsl(270, 100%, 60%));
+          border-radius: 99px;
+          position: absolute;
+          left: -50%;
+          animation: loading-bar-anim 1.5s infinite ease-in-out;
+        }
+        @keyframes loading-bar-anim {
+          0% { left: -50%; width: 30%; }
+          50% { width: 40%; }
+          100% { left: 100%; width: 30%; }
+        }
+      </style>
+      <div class="startup-loader-container">
+        <div class="logo-squircle-startup">
+          <div class="logo-ring-startup">
+            <div class="logo-dot-startup"></div>
+          </div>
+        </div>
+        <div class="app-name-startup">CogniFlow</div>
+        <div class="app-subtitle-startup">Offline Memory Lab</div>
+        <div class="loader-bar-container-startup">
+          <div class="loader-bar-progress-startup"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

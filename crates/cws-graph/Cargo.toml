@@ -1,0 +1,14 @@
+[package]
+name = "cws-graph"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cws-core = { path = "../cws-core" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }

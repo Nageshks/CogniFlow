@@ -1,0 +1,34 @@
+[package]
+name = "cogniflow"
+version = "0.1.0"
+description = "Cognitive Workflow System - Local-first desktop application"
+authors = ["CogniFlow"]
+edition = "2021"
+
+[lib]
+name = "cogniflow_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-shell = "2"
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+cws-core = { path = "../crates/cws-core" }
+cws-storage = { path = "../crates/cws-storage" }
+cws-search = { path = "../crates/cws-search" }
+cws-ai = { path = "../crates/cws-ai" }
+cws-graph = { path = "../crates/cws-graph" }
