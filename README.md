@@ -2,6 +2,8 @@
 
 Workflow-first prompt management for AI power users.
 
+![CogniFlow Library](screenshots/cogniflow-library.jpg)
+
 CogniFlow is an open-source desktop application that helps organize prompts as reusable workflows instead of isolated pieces of text.
 
 Most note-taking tools organize information as notes, documents, tasks, and lists. CogniFlow is designed for people who repeatedly use AI for learning, research, writing, coding, analysis, and other structured workflows.
